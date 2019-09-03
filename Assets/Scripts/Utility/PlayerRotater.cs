@@ -9,8 +9,8 @@ public class PlayerRotater : MonoBehaviour
 
     void Update()
     {
-        float xRotation = Input.GetAxis("Mouse X");
-        float yRotation = Input.GetAxis("Mouse Y");
+        float xRotation = Input.GetAxis("RStick X");
+        float yRotation = Input.GetAxis("RStick Y");
         transform.Rotate(0, -xRotation, 0);
         yController.transform.transform.Rotate(yRotation, 0, 0);
     }
