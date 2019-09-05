@@ -29,6 +29,7 @@ public class BulletShooter : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab);
         DamagertoEnemy damagertoEnemy = bullet.GetComponent<DamagertoEnemy>();
         damagertoEnemy.damage = power;
+        bullet.transform.position = gameObject.transform.position;
         Rigidbody rigidbody = bullet.GetComponent<Rigidbody>();
         rigidbody.AddForce(transform.up * bulletSpeed);
     }
