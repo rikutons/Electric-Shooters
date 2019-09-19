@@ -9255,6 +9255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854853783}
   - component: {fileID: 854853784}
+  - component: {fileID: 854853785}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -9297,6 +9298,20 @@ MonoBehaviour:
   bulletIntervalSecond: 0.3
   blur: 0.02
   blurInAiming: 0
+--- !u!114 &854853785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854853782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496319b9a391c704598234b4684724bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1100896304}
+  cameraZdif: 0.8
 --- !u!1 &855523205 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100292, guid: c925872ce3bfa384589bf34b953d5a65,
@@ -11946,7 +11961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100896304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.79}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2}
   m_LocalScale: {x: 0.50000006, y: 0.50000066, z: 0.10000012}
   m_Children: []
   m_Father: {fileID: 854853783}

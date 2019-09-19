@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletShooter : MonoBehaviour
 {
+    public bool isAiming = false;
+
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
@@ -36,10 +38,10 @@ public class BulletShooter : MonoBehaviour
         damagertoEnemy.damage = power;
         bullet.transform.position = gameObject.transform.position;
         Rigidbody bullet_rb = bullet.GetComponent<Rigidbody>();
-        Vector3 bulletForce = 
-            transform.forward + 
-            transform.right * Random.Range(-blur, blur) + 
-            transform.up * Random.Range(-blur, blur);
+        float bl = (isAiming ? blurInAiming : blur);
+        Vector3 bulletForce = transform.forward + 
+            transform.right * Random.Range(-bl, bl) + 
+            transform.up * Random.Range(-bl, bl);
         bulletForce = bulletForce.normalized;
         bullet_rb.AddForce(bulletForce * bulletSpeed);
     }
