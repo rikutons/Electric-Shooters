@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerRotater : MonoBehaviour
 {
     [SerializeField]
-    private GameObject yController;
+    private GameObject waepon;
 
     [SerializeField]
     private float ySensitivity;
@@ -17,6 +17,6 @@ public class PlayerRotater : MonoBehaviour
         float xRotation = Input.GetAxis("RStick X");
         float yRotation = Input.GetAxis("RStick Y");
         transform.Rotate(0, -xRotation * xSensitivity, 0);
-        yController.transform.transform.Rotate(-yRotation * ySensitivity, 0, 0);
+        waepon.transform.transform.Rotate(-yRotation * ySensitivity, 0, 0);
     }
 }

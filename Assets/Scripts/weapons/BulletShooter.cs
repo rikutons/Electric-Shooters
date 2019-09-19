@@ -12,6 +12,10 @@ public class BulletShooter : MonoBehaviour
     private float bulletSpeed;
     [SerializeField]
     private float bulletIntervalSecond;
+    [SerializeField]
+    private float blur; //割合指定 0でブレなし 1のとき、最高45度ずれ
+    [SerializeField]
+    private float blurInAiming;
 
     private float timeElapsed = 0;
     void Update()
@@ -22,6 +26,7 @@ public class BulletShooter : MonoBehaviour
             ShootBullet();
             timeElapsed = 0;
         }
+        Debug.DrawRay(transform.position, transform.up, Color.red);
     }
 
     private void ShootBullet()
@@ -30,7 +35,12 @@ public class BulletShooter : MonoBehaviour
         DamagertoEnemy damagertoEnemy = bullet.GetComponent<DamagertoEnemy>();
         damagertoEnemy.damage = power;
         bullet.transform.position = gameObject.transform.position;
-        Rigidbody rigidbody = bullet.GetComponent<Rigidbody>();
-        rigidbody.AddForce(transform.up * bulletSpeed);
+        Rigidbody bullet_rb = bullet.GetComponent<Rigidbody>();
+        Vector3 bulletForce = 
+            transform.forward + 
+            transform.right * Random.Range(-blur, blur) + 
+            transform.up * Random.Range(-blur, blur);
+        bulletForce = bulletForce.normalized;
+        bullet_rb.AddForce(bulletForce * bulletSpeed);
     }
 }
