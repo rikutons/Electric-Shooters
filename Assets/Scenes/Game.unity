@@ -554,7 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   upspeed: 100
-  downspeed: 15
+  downspeed: 0
   rb: {fileID: 0}
 --- !u!1 &35752114 stripped
 GameObject:

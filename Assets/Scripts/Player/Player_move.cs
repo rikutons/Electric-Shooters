@@ -5,8 +5,7 @@ using UnityEngine;
 public class Player_move : MonoBehaviour
 {
     public float speed = 3f, upspeed = 3f,downspeed = 3f;
-    float moveX = 0f;
-    float moveZ = 0f;
+    float moveX = 0f, moveY = 0f, moveZ = 0f;
     public Rigidbody rb;
     bool inputJumpButton = false;
     float oldy = 0f;
@@ -23,15 +22,16 @@ public class Player_move : MonoBehaviour
     {
         moveX = Input.GetAxis("Horizontal") * speed;
         moveZ = Input.GetAxis("Vertical") * speed;
-        
+
+        if (Input.GetButton("Jump"))
+        {
+            inputJumpButton = false;
+        }
         if (Input.GetButtonDown("Jump")&&oldy==rb.position.y)
         {
             inputJumpButton = true;
         }
-        if (Input.GetButtonUp("Jump"))
-        {
-            inputJumpButton = false;
-        }
+
         oldy = rb.position.y;
 
     }
@@ -45,15 +45,16 @@ public class Player_move : MonoBehaviour
     //}
     void FixedUpdate()
     {
-        rb.velocity = new Vector3(moveX, 0, moveZ);
+        moveY = rb.velocity.y;
+        rb.velocity = new Vector3(moveX, moveY, moveZ);
         if (inputJumpButton)
         {
             rb.AddForce(transform.up * upspeed);
         }
-        if (!inputJumpButton)
+        /*if (!inputJumpButton)
         {
             rb.AddForce(transform.up * -downspeed);
-        }
+        }*/
     
     }
 
