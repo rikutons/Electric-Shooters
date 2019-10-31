@@ -470,9 +470,9 @@ GameObject:
   m_Component:
   - component: {fileID: 32887801}
   - component: {fileID: 32887800}
-  - component: {fileID: 32887803}
   - component: {fileID: 32887802}
   - component: {fileID: 32887804}
+  - component: {fileID: 32887803}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -527,8 +527,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &32887803
-BoxCollider:
+--- !u!136 &32887803
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -537,8 +537,9 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.5, z: 0.1}
+  m_Radius: 0.06
+  m_Height: 0.5
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &32887804
 MonoBehaviour:
@@ -552,9 +553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7b52fc20ff50140926fa0bde3e5223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  upspeed: 100
-  downspeed: 0
+  speed: 2
+  upspeed: 200
   rb: {fileID: 0}
 --- !u!1 &35752114 stripped
 GameObject:

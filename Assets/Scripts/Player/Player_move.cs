@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player_move : MonoBehaviour
 {
-    public float speed = 3f, upspeed = 3f,downspeed = 3f;
-    float moveX = 0f, moveY = 0f, moveZ = 0f;
+    public float speed = 3f, upspeed = 3f;
+    float moveX = 0f, moveZ = 0f;
     public Rigidbody rb;
     bool inputJumpButton = false;
     float oldy = 0f;
@@ -22,40 +22,25 @@ public class Player_move : MonoBehaviour
     {
         moveX = Input.GetAxis("Horizontal") * speed;
         moveZ = Input.GetAxis("Vertical") * speed;
+    }
 
-        if (Input.GetButton("Jump"))
-        {
-            inputJumpButton = false;
-        }
-        if (Input.GetButtonDown("Jump")&&oldy==rb.position.y)
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector3(moveX, rb.velocity.y, moveZ);
+
+        inputJumpButton = false;
+
+        if (Input.GetButtonDown("Jump") && oldy == rb.position.y)
         {
             inputJumpButton = true;
         }
 
         oldy = rb.position.y;
 
-    }
-    //void OnCollisionStay(Collision col)
-    //{
-        
-    //    if (col.gameObject.tag == "Ground" && Input.GetButtonDown("Jump"))
-    //    {
-    //        inputJumpButton = true;
-    //    }
-    //}
-    void FixedUpdate()
-    {
-        moveY = rb.velocity.y;
-        rb.velocity = new Vector3(moveX, moveY, moveZ);
         if (inputJumpButton)
         {
             rb.AddForce(transform.up * upspeed);
         }
-        /*if (!inputJumpButton)
-        {
-            rb.AddForce(transform.up * -downspeed);
-        }*/
-    
     }
 
 }
