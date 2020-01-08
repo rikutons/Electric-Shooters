@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_move : MonoBehaviour
+public class PlayerMover : MonoBehaviour
 {
 
     [SerializeField]
@@ -48,7 +48,7 @@ public class Player_move : MonoBehaviour
         }
         rigidbody.velocity = transform.TransformDirection(velocity);
 
-        if (Input.GetButtonDown("Jump") && canJump == true)
+        if (Input.GetButtonDown("Jump") && canJump == true && rigidbody.velocity.y < 1)
         {
             rigidbody.AddForce(transform.up * upspeed);
             canJump = false;

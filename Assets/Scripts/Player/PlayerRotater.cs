@@ -16,7 +16,7 @@ public class PlayerRotater : MonoBehaviour
     {
         float xRotation = Input.GetAxis("RStick X");
         float yRotation = Input.GetAxis("RStick Y");
-        transform.Rotate(0, -xRotation * xSensitivity, 0);
+        transform.Rotate(0, xRotation * xSensitivity, 0);
         waepon.transform.transform.Rotate(-yRotation * ySensitivity, 0, 0);
     }
 }

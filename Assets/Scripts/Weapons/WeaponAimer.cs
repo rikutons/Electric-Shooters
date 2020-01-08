@@ -7,6 +7,8 @@ public class WeaponAimer : MonoBehaviour
     [SerializeField]
     new private GameObject camera;
     [SerializeField]
+    private float cameraYdif;
+    [SerializeField]
     private float cameraZdif;
 
     private BulletShooter bulletShooter;
@@ -30,13 +32,13 @@ public class WeaponAimer : MonoBehaviour
 
     private void StartAiming()
     {
-        camera.transform.Translate(0, 0, cameraZdif);
+        camera.transform.Translate(0, cameraYdif, cameraZdif);
         bulletShooter.isAiming = true;
     }
 
     private void FinishAiming()
     {
-        camera.transform.Translate(0, 0, -cameraZdif);
+        camera.transform.Translate(0, -cameraYdif, -cameraZdif);
         bulletShooter.isAiming = false;
     }
 }
