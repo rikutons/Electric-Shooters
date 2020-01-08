@@ -542,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   upspeed: 1000
-  rb: {fileID: 0}
+  rigidbody: {fileID: 32887802}
 --- !u!65 &32887808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -550,12 +550,12 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32887799}
-  m_Material: {fileID: 13400000, guid: 5d1bb90624ef8d24c96943a7f3f423a0, type: 2}
+  m_Material: {fileID: 13400000, guid: 27ae64491d7be604b99701507af3d8b3, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.5, z: 0.08}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.08, y: 0.01, z: 0.08}
+  m_Center: {x: 0, y: -0.246, z: 0}
 --- !u!136 &32887809
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -563,7 +563,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32887799}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 27ae64491d7be604b99701507af3d8b3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.06
@@ -5634,7 +5634,6 @@ GameObject:
   - component: {fileID: 475979974}
   - component: {fileID: 475979973}
   - component: {fileID: 475979972}
-  - component: {fileID: 475979971}
   m_Layer: 0
   m_Name: WeaponModel
   m_TagString: Untagged
@@ -5642,20 +5641,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &475979971
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475979970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &475979972
 MeshRenderer:
   m_ObjectHideFlags: 0
