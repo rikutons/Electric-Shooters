@@ -7,9 +7,13 @@ public class WeaponAimer : MonoBehaviour
     [SerializeField]
     new private GameObject camera;
     [SerializeField]
-    private float cameraYdif;
+    private Vector3 cameraPosDefault;
     [SerializeField]
-    private float cameraZdif;
+    private Vector3 cameraRotateDefault;
+    [SerializeField]
+    private Vector3 cameraPosAiming;
+    [SerializeField]
+    private Vector3 cameraRotateAiming;
 
     private BulletShooter bulletShooter;
 
@@ -32,13 +36,17 @@ public class WeaponAimer : MonoBehaviour
 
     private void StartAiming()
     {
-        camera.transform.Translate(0, cameraYdif, cameraZdif);
+        camera.transform.localPosition = cameraPosAiming;
+        camera.transform.rotation = new Quaternion(0, 0, 0, 0);
+        camera.transform.Rotate(cameraRotateAiming);
         bulletShooter.isAiming = true;
     }
 
     private void FinishAiming()
     {
-        camera.transform.Translate(0, -cameraYdif, -cameraZdif);
+        camera.transform.localPosition = cameraPosDefault;
+        camera.transform.rotation = new Quaternion(0,0,0,0);
+        camera.transform.Rotate(cameraRotateDefault);
         bulletShooter.isAiming = false;
     }
 }

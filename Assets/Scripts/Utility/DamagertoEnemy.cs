@@ -6,12 +6,15 @@ public class DamagertoEnemy : MonoBehaviour
 {
     public float damage { get; set; }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             //ダメージを与える処理
         }
-        Destroy(gameObject);
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

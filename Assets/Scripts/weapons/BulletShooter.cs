@@ -11,6 +11,8 @@ public class BulletShooter : MonoBehaviour
     [SerializeField]
     private float power;
     [SerializeField]
+    private int bulletNum;
+    [SerializeField]
     private float bulletSpeed;
     [SerializeField]
     private float bulletIntervalSecond;
@@ -23,9 +25,14 @@ public class BulletShooter : MonoBehaviour
     void Update()
     {
         timeElapsed += Time.deltaTime;
+
         if (Input.GetButton("Fire1") && timeElapsed >= bulletIntervalSecond)
         {
-            ShootBullet();
+            for (int i = 0; i < bulletNum; i++)
+            {
+                ShootBullet();
+            }
+
             timeElapsed = 0;
         }
         Debug.DrawRay(transform.position, transform.up, Color.red);
@@ -39,8 +46,8 @@ public class BulletShooter : MonoBehaviour
         bullet.transform.position = gameObject.transform.position;
         Rigidbody bullet_rb = bullet.GetComponent<Rigidbody>();
         float bl = (isAiming ? blurInAiming : blur);
-        Vector3 bulletForce = transform.forward + 
-            transform.right * Random.Range(-bl, bl) + 
+        Vector3 bulletForce = transform.forward +
+            transform.right * Random.Range(-bl, bl) +
             transform.up * Random.Range(-bl, bl);
         bulletForce = bulletForce.normalized;
         bullet_rb.AddForce(bulletForce * bulletSpeed);

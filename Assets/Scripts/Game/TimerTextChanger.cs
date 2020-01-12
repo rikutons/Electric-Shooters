@@ -9,17 +9,17 @@ public class TimerTextChanger : MonoBehaviour
     private Text timerText;
     private void OnEnable()
     {
-        UnionGameData.OnLimitTimeChanged += ChangeTimer;
+        UnionGameData.OnLimitTimeChanged += ChangeText;
     }
 
     private void OnDisable()
     {
-        UnionGameData.OnLimitTimeChanged -= ChangeTimer;
+        UnionGameData.OnLimitTimeChanged -= ChangeText;
     }
 
-    void ChangeTimer(float limit_time)
+    void ChangeText(float limit_time)
     {
         limit_time = (int)limit_time;
-        timerText.text = string.Format("{0}:{1}", (int)limit_time / 60, (int)limit_time % 60);
+        timerText.text = string.Format("{0}:{1:D2}", (int)limit_time / 60, (int)limit_time % 60);
     }
 }
