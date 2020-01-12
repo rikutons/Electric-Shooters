@@ -556,7 +556,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.01, z: 0.08}
-  m_Center: {x: 0, y: -0.15, z: 0}
+  m_Center: {x: 0, y: -0.16, z: 0}
 --- !u!136 &32887809
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4214,6 +4214,7 @@ GameObject:
   - component: {fileID: 374606091}
   - component: {fileID: 374606090}
   - component: {fileID: 374606089}
+  - component: {fileID: 374606092}
   m_Layer: 5
   m_Name: 1pScoreText
   m_TagString: Untagged
@@ -4295,6 +4296,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374606087}
   m_CullTransparentMesh: 0
+--- !u!114 &374606092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374606087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &378788069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100974, guid: c925872ce3bfa384589bf34b953d5a65,
@@ -11682,6 +11698,7 @@ GameObject:
   - component: {fileID: 1071634564}
   - component: {fileID: 1071634563}
   - component: {fileID: 1071634562}
+  - component: {fileID: 1071634565}
   m_Layer: 5
   m_Name: 2pScoreText
   m_TagString: Untagged
@@ -11763,6 +11780,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071634560}
   m_CullTransparentMesh: 0
+--- !u!114 &1071634565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071634560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1072306613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101774, guid: c925872ce3bfa384589bf34b953d5a65,
@@ -20731,6 +20763,7 @@ GameObject:
   - component: {fileID: 1933290405}
   - component: {fileID: 1933290404}
   - component: {fileID: 1933290406}
+  - component: {fileID: 1933290407}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Untagged
@@ -20812,6 +20845,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1933290404}
+--- !u!114 &1933290407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933290402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1935023606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 101186, guid: c925872ce3bfa384589bf34b953d5a65,
