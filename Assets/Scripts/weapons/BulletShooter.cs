@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BulletShooter : MonoBehaviour
 {
+    [System.NonSerialized]
     public bool isAiming = false;
 
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
-    private float power;
+    private int power;
     [SerializeField]
     private int bulletNum;
     [SerializeField]

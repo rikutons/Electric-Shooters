@@ -19,6 +19,6 @@ public class P2_ScoreTextChanger : MonoBehaviour
 
     void ChangeText(int score)
     {
-        scoreText.text = string.Format("score : {0}", score);
+        scoreText.text = string.Format("Score : {0}", score);
     }
 }
