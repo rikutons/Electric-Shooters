@@ -11,6 +11,7 @@ public class DamagertoEnemy : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             //ダメージを与える処理
+            EachPlayerData.Player1_Score += 100;
         }
         if (!other.gameObject.CompareTag("Player"))
         {
