@@ -10,12 +10,9 @@ public class DamagertoEnemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log(other.gameObject.name);
             //ダメージを与える処理
             EnemyStatusManager enemyStatusManager = other.gameObject.GetComponent<EnemyStatusManager>();
-            Debug.Log(enemyStatusManager);
             int score = enemyStatusManager.Damage(damage);
-            Debug.Log(score);
             if (score != 0)
                 Destroy(other.gameObject);
             EachPlayerData.Player1_Score += score;

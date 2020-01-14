@@ -41,10 +41,9 @@ public class BulletShooter : MonoBehaviour
 
     private void ShootBullet()
     {
-        GameObject bullet = Instantiate(bulletPrefab);
+        GameObject bullet = Instantiate(bulletPrefab,transform.position, Quaternion.identity);
         DamagertoEnemy damagertoEnemy = bullet.GetComponent<DamagertoEnemy>();
         damagertoEnemy.damage = power;
-        bullet.transform.position = gameObject.transform.position;
         Rigidbody bullet_rb = bullet.GetComponent<Rigidbody>();
         float bl = (isAiming ? blurInAiming : blur);
         Vector3 bulletForce = transform.forward +
