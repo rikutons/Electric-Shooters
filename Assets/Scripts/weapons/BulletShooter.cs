@@ -36,7 +36,7 @@ public class BulletShooter : MonoBehaviour
 
             timeElapsed = 0;
         }
-        Debug.DrawRay(transform.position, transform.up, Color.red);
+        //Debug.DrawRay(transform.position, transform.up, Color.red);
     }
 
     private void ShootBullet()
