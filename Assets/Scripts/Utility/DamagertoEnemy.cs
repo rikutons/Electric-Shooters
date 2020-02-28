@@ -15,7 +15,7 @@ public class DamagertoEnemy : MonoBehaviour
             int score = enemyStatusManager.Damage(damage);
             if (score != 0)
                 Destroy(other.gameObject);
-            EachPlayerData.Player1_Score += score;
+            EachPlayerData.Score += score;
         }
         if (!other.gameObject.CompareTag("Player"))
         {

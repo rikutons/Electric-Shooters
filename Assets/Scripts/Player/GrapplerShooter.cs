@@ -8,35 +8,30 @@ public class GrapplerShooter : MonoBehaviour
     public bool isAiming = false;
 
     [SerializeField]
-    private GameObject hookPrefab;
+    private GameObject hook;
+    [SerializeField]
+    private Rigidbody hook_rb;
     [SerializeField]
     private float hookSpeed;
-    [SerializeField]
-    private Transform playerTransform;
-    [SerializeField]
-    private Rigidbody playerRigidbody;
-    private float timeElapsed = 0;
+
     void Update()
     {
         if (Input.GetButtonDown("Fire2"))
         {
             ShootGlappler();
-
-            timeElapsed = 0;
         }
         //Debug.DrawRay(transform.position, transform.up, Color.red);
     }
 
     private void ShootGlappler()
     {
-        var hook = Instantiate(hookPrefab, transform.position, Quaternion.identity);
-        var hookPuller = hook.GetComponent<HookPuller>();
-        hookPuller.playerTransform = playerTransform;
-        hookPuller.playerRigidbody = playerRigidbody;
-
-        var hook_rb = hook.GetComponent<Rigidbody>();
+        hook.SetActive(true);
+        hook.transform.position = transform.position;
+        
         var hookForce = transform.forward;
         hookForce = hookForce.normalized;
-        hook_rb.AddForce(hookForce * hookSpeed);
+
+        hook_rb.velocity = Vector3.zero;
+        hook_rb.AddForce( hookForce * hookSpeed);
     }
 }

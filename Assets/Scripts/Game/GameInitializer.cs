@@ -8,6 +8,11 @@ public class GameInitializer : MonoBehaviour
     float first_limit_second;
     void Start()
     {
-        UnionGameData.LimitTime = first_limit_second;
+        float limit_second;
+        if(PlayerPrefs.HasKey("制限時間"))
+            limit_second = PlayerPrefs.GetInt("制限時間") * 60;
+        else
+            limit_second = first_limit_second;
+        UnionGameData.LimitTime = limit_second;
     }
 }

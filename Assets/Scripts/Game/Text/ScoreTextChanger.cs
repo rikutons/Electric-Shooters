@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class P2_ScoreTextChanger : MonoBehaviour
+public class ScoreTextChanger : MonoBehaviour
 {
     [SerializeField]
     private Text scoreText;
     private void OnEnable()
     {
-        EachPlayerData.OnPlayer2_ScoreChanged += ChangeText;
+        EachPlayerData.OnScoreChanged += ChangeText;
     }
 
     private void OnDisable()
     {
-        EachPlayerData.OnPlayer2_ScoreChanged -= ChangeText;
+        EachPlayerData.OnScoreChanged -= ChangeText;
     }
 
     void ChangeText(int score)
